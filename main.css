@@ -1,0 +1,73 @@
+.outer-shell{
+	width: 500px;
+	height: 300px;
+	padding: 50px;
+	background-color: darkgrey;
+/*	display: flex;
+	display: -webkit-flex;*/
+/*	display: table;*/
+/*	text-align: center;*/
+
+
+}
+
+.inner-shell{
+	height: 80%;
+	background-color: black;
+	padding: 10px;
+	position: relative;
+/*	width: 80%;*/
+/*	margin: auto;*/
+/*	display: flex;
+	display: -webkit-flex;
+	display: table-cell;*/
+/*	vertical-align: middle;*/
+}
+
+.clock-screen{
+	background-color: darkred;
+	padding: 10px;
+/*	position: absolute;*/
+/*	width: 80%;
+	height: 60%;*/
+/*	display: flex;
+	display: -webkit-flex;*/
+/*	display: table-cell;*/
+	overflow: auto;
+
+	
+}
+
+.clock-text{
+	color: red;
+	text-align: center;
+	float:right;
+/*	font-size:50px;*/
+/*	width: 75%;*/
+
+}
+
+.indicator-container{
+	width: 25%;
+	float: left;
+}
+.indicator{
+	background-color: red;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.label{
+	color: white;
+	display:inline-block;
+}
+
+.freq{
+	color:white;
+}
+
+#freq-container{
+	clear:both;
+}
