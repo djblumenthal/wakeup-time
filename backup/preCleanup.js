@@ -1,27 +1,20 @@
-Date.prototype.rawTime = function (){
-  this.rawHours = this.getHours();
-  this.rawMinutes = this.getMinutes();
-  this.rawPM = (this.getHours()>=12);
-}
-
-var App = {
-  
-  // returns time string from raw date data
-  parseTime : function(hours, minutes){
+var grabTime = function(){
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var pm;
+  if (hours>=12){
+    pm = true;
     if (hours > 12){
-        hours -= 12;
-    }else if (hours==0){
-      hours+=12;
+      hours -= 12;
     }
-    return ''+hours+':'+minutes+'';
-  },
-
-  
-
-
-};
-
-
+  }else if (hours==0){
+    hours+=12;
+  }if (!pm){
+      pmIndicator.css('background-color', 'red');
+  }
+  return ''+hours+':'+minutes+'';
+}
 
 
   var outerShell = $('<div class ="outer-shell"></div>');
@@ -50,13 +43,7 @@ $(document).on('ready', function() {
   innerShell.append(clockScreen);
 
   setInterval( function(){
-    clockText.text(App.parseTime(rawTime.rawHours, rawTime.rawMinutes));
-    //update rendering of PM 
-    if (App.rawTime.rawPm){
-      pmIndicator.css('background-color', 'red');
-    }else {
-      pmIndicator.css('background-color', 'darkred');
-    }
+    clockText.text(grabTime());
   }, 0, 1000);
 
   
